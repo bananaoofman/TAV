@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAVAds - Digital Advertising Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.svg" alt="TAVAds Logo" class="animated-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div id="particles-hero"></div>
+            <div class="hero-content">
+                <img src="img/logo.svg" alt="TAVAds Logo" class="hero-logo animated-logo">
+                <h1>Welcome to TAV Outdoor Advertising</h1>
+                <p>Where innovation meets excellence in out-of-home (OOH) advertising.</p>
+                <a href="#contact" class="cta-button">Elevate Your Brand</a>
+                <a href="billboard-sites.html" class="cta-button">Billboard Sites</a>
+            </div>
+        </section>
+
+        <section id="services" class="services fade-in-section">
+            <h2>Why Choose TAV Outdoor Advertising?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Expertise in OOH Advertising</h3>
+                    <p>Decades of experience in billboard construction and signage production.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Comprehensive Services</h3>
+                    <p>From digital printing to banner installation, we cover all your advertising needs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Customer-Centric Approach</h3>
+                    <p>Tailored solutions for industries like real estate, food, retail, apparel, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about fade-in-section">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <p>Our journey began with the establishment of P&M Ads, a pioneering fabricator of billboard steel structures that quickly became a cornerstone for one of the country's leading outdoor advertising companies. Over time, P&M Ads expanded its expertise into construction, signage production, banner installation, and printing, laying a solid foundation for what we are today.<br><br>
+                As our business evolved, we introduced JCPM Marketing Venture to cater to the digital and offset printing needs of our clients, ensuring a comprehensive advertising service offering. This was followed by the formation of Rhema Advertising, which took over from P&M Ads to serve a broader range of OOH advertising needs for our loyal customers across industries such as real estate, food, retail, and apparel. Rhema Advertising Co. (partnership) was then established to support our company's expansion and meet the growing demands of our client base, while JCPM Marketing Venture continued to focus on outdoor and indoor advertising sales.<br><br>
+                A year after the country's strictest lockdown due to the global pandemic, TAV Outdoor Advertising emerged as the next chapter in our story. Replacing Rhema Advertising Co., we are equipped with a new business plan and an advanced system designed to better serve our customers' needs. At TAV Outdoor Advertising, we are committed to delivering cutting-edge advertising solutions and unparalleled service, ensuring your brand stands out in the ever-changing advertising landscape.<br><br>
+                Join us as we continue to shape the future of outdoor advertising!</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact fade-in-section">
+            <h2>Contact TAV Outdoor Advertising</h2>
+            <p style="text-align:center; margin-bottom:2rem;">Contact TAV Outdoor Advertising today to elevate your brand with top-tier OOH advertising services! Explore our outdoor advertising solutions and let's create something impactful together.</p>
+            <form class="contact-form" action="https://formspree.io/f/xjkwrpdd" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address.">
+                <input type="tel" name="phone" placeholder="Your Phone (Optional)" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" title="Enter a valid phone number (e.g., 123-456-7890 or 1234567890)">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="form-status" style="margin-top: 1rem; text-align: center; font-weight: 500;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content fade-in-section">
+            <div class="footer-section">
+                <h3>TAVAds</h3>
+                <p>Transforming businesses through innovative advertising solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@tavads.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/TAVads" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TAVAds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Logo Animation
+        const logoPaths = document.querySelectorAll('.animated-logo path');
+        if (logoPaths.length > 0) {
+          anime({
+            targets: logoPaths,
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 2000,
+            delay: function(el, i) { return i * 100 },
+            direction: 'normal',
+            loop: false
+          });
+        }
+
+        // Particles Animation
+        const particlesContainer = document.getElementById('particles-hero');
+        if (particlesContainer && window.tsParticles) {
+          console.log('[TAVAds Particles] Attempting to load particles into #particles-hero...');
+          tsParticles.load('particles-hero', {
+            fullScreen: false, // Particles confined to the #particles-hero div
+            background: {
+              color: 'transparent' // Show hero section's background
+            },
+            particles: {
+              number: {
+                value: 80, 
+                density: {
+                  enable: true,
+                  area: 800 
+                }
+              },
+              color: {
+                value: '#FFFFFF' // CHANGED: Particles are now white
+              },
+              shape: {
+                type: 'circle' 
+              },
+              opacity: {
+                value: 0.7, // Particle opacity (slightly increased)
+                animation: { 
+                    enable: true,
+                    speed: 0.5,
+                    minimumValue: 0.2, // Slightly higher minimum opacity
+                    sync: false
+                }
+              },
+              size: {
+                value: { min: 1, max: 3 }, 
+                animation: { 
+                    enable: true,
+                    speed: 2,
+                    minimumValue: 0.5,
+                    sync: false
+                }
+              },
+              move: {
+                enable: true,
+                speed: 1, 
+                direction: 'none',
+                random: true,
+                straight: false,
+                outModes: 'out' 
+              },
+              links: {
+                enable: false, // Links are disabled by default, will be enabled by hover interaction
+                color: '#FFFFFF', // Links are white
+                distance: 150,   
+                opacity: 0.4,    
+                width: 1.5         // CHANGED: Link width slightly increased
+              }
+            },
+            interactivity: {
+              detectsOn: 'parent', 
+              events: {
+                onHover: {
+                  enable: true,   
+                  mode: 'connect' 
+                },
+                onClick: {
+                  enable: true,   
+                  mode: 'push'    
+                }
+              },
+              modes: {
+                connect: {
+                  distance: 100,   
+                  links: {
+                    opacity: 0.85 // CHANGED: Opacity of links created on hover increased
+                  },
+                  radius: 150    
+                },
+                push: {
+                  quantity: 4    
+                },
+                grab: { 
+                    distance: 140,
+                    links: {
+                        opacity: 0.8,
+                        color: "#ffffff"
+                    }
+                },
+                bubble: { 
+                    distance: 200,
+                    size: 20,
+                    opacity: 0.8
+                }
+              }
+            },
+            detectRetina: true 
+          }).then(container => {
+            console.log('[TAVAds Particles] Particles loaded successfully with ENHANCED hover connect effect!', container);
+          }).catch(error => {
+            console.error('[TAVAds Particles] Error loading particles:', error);
+          });
+        } else {
+          if (!particlesContainer) console.error('[TAVAds Particles] Error: Container #particles-hero not found in HTML.');
+          if (!window.tsParticles) console.error('[TAVAds Particles] Error: tsParticles library not loaded. Check CDN link and internet connection.');
+        }
+      });
+    </script>
+</body>
+</html>

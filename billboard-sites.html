@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billboard Sites | TAV Outdoor Advertising</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- tsParticles CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+    <!-- Three.js CDN -->
+    <script type="importmap">
+      { "imports": { "three": "https://unpkg.com/three@0.163.0/build/three.module.js" } }
+    </script>
+    <style>
+      header .logo a img {
+          transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      }
+      header .logo a:hover img {
+          transform: scale(1.05);
+          opacity: 0.85;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Homepage" style="display: inline-block; line-height: 0;">
+                    <img src="img/logo.png" alt="TAVAds Logo" style="display: block;">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" style="padding-top: 9rem; padding-left: 5%; padding-right: 5%; padding-bottom: 2rem; position: relative; overflow: hidden;">
+            <div id="particles-hero" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1; pointer-events: none;"></div>
+            <div class="hero-content" style="position:relative;z-index:2;">
+                <div class="logo-container" style="text-align: center; margin-bottom: 2rem;">
+                    <img src="img/logo.svg" alt="TAVAds Logo" style="max-width: 300px; height: auto;">
+                </div>
+                <h1>Billboard Sites</h1>
+                <p>Explore our available billboard locations. Contact us for more details or to reserve a site!</p>
+                <div style="margin: 2rem 0;">
+                    <!-- Placeholder for billboard locations -->
+                    
+                    <!-- Map Container -->
+                    <div id="map-container" style="position: relative; z-index: 2; width: 100%; max-width: 100%; margin: 2rem auto 0 auto;">
+                        <iframe
+                          src="https://www.google.com/maps/d/embed?mid=1rkWIvf8fQL1rKhkqrvyEpGm5VAkMVDQ"
+                          width="100%"
+                          height="650"
+                          style="border:0; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10); display: block;"
+                          allowfullscreen=""
+                          loading="lazy" 
+                          referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <a href="https://www.google.com/maps/d/viewer?mid=1rkWIvf8fQL1rKhkqrvyEpGm5VAkMVDQ"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Show all sites"
+                           style="position: absolute; top: 16px; right: 16px; z-index: 5; background-color: #4A5568; padding: 10px; border-radius: 8px; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer; color: #FFFFFF; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.2;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF" style="margin-right: 8px; flex-shrink: 0;">
+                                <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-800v560q0 33-23.5 56.5T760-160H480Zm-80-160-43-43 103-103H120v-60h340L357-670l43-43 160 160-160 160Z"/>
+                            </svg>
+                            <span>Show all sites</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html" class="cta-button secondary">&#8592; Back to Home</a>
+            </div>
+        </section>
+    </main>
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      tsParticles.load('particles-hero', {
+        fullScreen: false,
+        background: { color: 'transparent' },
+        particles: {
+          number: { value: 60 },
+          color: { value: '#fff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.7 },
+          size: { value: { min: 1, max: 4 } },
+          move: { enable: true, speed: 1, direction: 'none', outModes: 'out' },
+          links: { enable: false }
+        },
+        detectRetina: true
+      });
+    });
+    </script>
+    <!-- Three.js Galaxy Animation Script Removed -->
+</body>
+</html> 

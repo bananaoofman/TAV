@@ -1,0 +1,506 @@
+:root {
+    --primary-red: #e63946; /* Vibrant Red */
+    --dark-red: #c1121f;    /* Darker Red for accents/hovers */
+    --light-red: #ff7b89;   /* Lighter Red for subtle accents */
+    --white: #ffffff;
+    --off-white: #f4f6f8;   /* Softer off-white for backgrounds */
+    --light-gray: #e9ecef;  /* Light gray for borders/dividers */
+    --medium-gray: #adb5bd; /* Medium gray for secondary text */
+    --dark-gray: #343a40;   /* Dark gray for primary text (not pure black) */
+    --black: #000000;
+
+    /* Fonts */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--dark-gray);
+    background-color: var(--white); /* Main background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-top: 0;
+}
+
+/* Header & Navigation - Static White */
+header {
+    background: var(--white); /* Static White Background */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: none; /* Remove transition if not needed for other effects */
+}
+
+header .nav-links a {
+    color: var(--primary-red); /* Red links on white bg */
+    transition: color 0.3s ease-out; /* Keep simple hover transition */
+}
+header .nav-links a:hover {
+    color: var(--dark-red);
+}
+header .hamburger span {
+    background-color: var(--primary-red); /* Red hamburger on white bg */
+    transition: background-color 0.3s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    height: 70px;
+}
+
+/* --- DO NOT CHANGE: Navbar logo background must always be solid red --- */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background: var(--primary-red) !important; /* Keep logo bg red */
+    border-radius: 8px;
+    border: none !important;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.logo img {
+    max-height: 56px;
+    max-width: 140px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links a, .hamburger span {
+    transition: color 0.4s ease-out, background-color 0.4s ease-out; /* Smooth transition for link and hamburger colors */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--light-red);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden; /* Keep this to contain animations if they go outside bounds */
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    color: var(--white);
+    padding: 9rem 5% 5rem; /* Increased top/bottom padding slightly */
+    text-align: center;
+}
+
+#particles-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure particles are behind content */
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above particles */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* SVG Logo Animation */
+.animated-logo {
+    animation: popIn 0.8s ease-out 0.2s backwards;
+    color: var(--white); /* Set text color to white for the SVG stroke */
+}
+
+.animated-logo path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Update existing hero-logo styles */
+.hero-logo {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.hero h1 {
+    font-size: 3.2rem; /* Slightly larger */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+    /* Animation for H1 */
+    animation: fadeInUp 0.8s ease-out 0.5s backwards;
+}
+
+.hero p {
+    font-size: 1.25rem; /* Slightly larger */
+    margin-bottom: 2.5rem;
+    max-width: 700px; /* Constrain line length */
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+    /* Animation for paragraph */
+    animation: fadeInUp 0.8s ease-out 0.8s backwards;
+}
+
+/* CTA Buttons - Reverted Styling */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Original padding */
+    font-family: var(--font-body); /* Reverted to body font for buttons */
+    font-weight: bold; /* Original font-weight */
+    font-size: 1.1rem; /* Original font-size */
+    border-radius: 5px; /* Original border-radius */
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    min-width: 180px;
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--primary-red);
+    border: 2px solid var(--white);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none; /* Removed modern box-shadow */
+}
+
+.cta-button:hover {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: 2px solid var(--white);
+    transform: translateY(0); /* Removed hover lift */
+    box-shadow: none; /* Ensured no shadow on hover */
+}
+
+.cta-button + .cta-button {
+    margin-left: 1rem;
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%; /* Increased padding */
+    background-color: var(--off-white);
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--dark-red);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 5%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red)); /* Red gradient background */
+    color: var(--white); /* Default text color for this section */
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: var(--white); /* Ensure heading is white */
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    color: rgba(255, 255, 255, 0.9); /* Softer white for readability */
+    font-size: 1.1rem; /* Slightly increase for readability on dark bg */
+    line-height: 1.8; /* Improve line spacing */
+    margin-bottom: 1.5rem; /* Space between paragraphs if any */
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%; /* Increased padding */
+    background-color: var(--off-white);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--dark-red);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--dark-red);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red)); /* Same as header/hero */
+    color: var(--white); /* Default text color for footer content */
+    padding: 4rem 5% 2rem;
+}
+
+footer h3 {
+    font-family: var(--font-heading);
+    color: var(--white); /* Ensure headings are white */
+    font-weight: 600;
+    margin-bottom: 1rem; /* Added margin for spacing */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    color: rgba(255, 255, 255, 0.85); /* Slightly softer white for paragraph text */
+    margin-bottom: 0.5rem; /* Spacing for paragraphs */
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white); /* Ensure social icons are white */
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+}
+
+.social-links a:hover {
+    color: var(--light-red); /* Lighter red on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7); /* Softer white for copyright */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+    }
+    .nav-links {
+        display: none; /* This will be toggled by JS */
+        /* Ensure it stacks correctly when shown */
+        flex-direction: column;
+        width: 100%;
+        background: var(--dark-red); /* Match header or choose a suitable background */
+        position: absolute;
+        top: 70px; /* Adjust based on your header height */
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active { /* Add a class to show the menu */
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-logo {
+        max-width: 120px;
+        margin-bottom: 1.2rem;
+        /* padding: 1rem; */ /* Removed padding as it might not be needed if background is none */
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem; /* Slightly smaller buttons on mobile */
+        font-size: 0.9rem;
+    }
+    .cta-button + .cta-button {
+        margin-left: 0; /* Stack buttons on mobile */
+        margin-top: 1rem; /* Add space between stacked buttons */
+    }
+}
+
+/* Scroll Fade-in Animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
